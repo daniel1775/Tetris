@@ -32,7 +32,7 @@ let tablero = [
    [0,0,0,0,0,0,0,0,0,0],
 ];
 
-// Generar una pieza de forma aleatoria
+// Generate a random piece
 function generarPieza(random){
    let aux;
    if(random==0){
@@ -54,12 +54,12 @@ function generarPieza(random){
    return aux;
 }
 
-// Generar un numero aleatorio entre 0 y 6
+// Generate a random number between 0 and 6
 function generarNumeroAleatorio(){
    return Math.floor(Math.random()*(7));
 }
 
-// Fija una pieza y genera una nueva
+// Fix a piece and generate a new piece
 function fijarPieza(ficha){
    for(let i=0 ; i<ficha.coordenadas.length ; i++){
       tablero[ficha.coordenadas[i][0]][ficha.coordenadas[i][1]] = 1;
@@ -67,10 +67,10 @@ function fijarPieza(ficha){
    pieza = generarPieza(generarNumeroAleatorio());
 }
 
-// Dibujar pieza en el estado inicial
+// Draw a piece in the initial state
 function dibujarFicha(obj , tipo){
    if(tipo=="abajo"){
-      // Comprobar si llego al limite del tablero o a las demás piezas fijadas
+      // Check if arrive at limit of the board or to the more fixed pieces
       if((obj.coordenadas[0][0]!=19 && obj.coordenadas[1][0]!=19 && obj.coordenadas[2][0]!=19 && obj.coordenadas[3][0]!=19) &&
          (tablero[obj.coordenadas[3][0]+1][obj.coordenadas[3][1]]!=1 && tablero[obj.coordenadas[2][0]+1][obj.coordenadas[2][1]]!=1 && tablero[obj.coordenadas[1][0]+1][obj.coordenadas[1][1]]!=1 && tablero[obj.coordenadas[0][0]+1][obj.coordenadas[0][1]]!=1)){
          obj.desplazarAbajo();
@@ -89,14 +89,23 @@ function dibujarFicha(obj , tipo){
       }
    }
    ctx.fillStyle = obj.color;
+   ctx.strokeStyle = "black";
+
    ctx.fillRect(obj.coordenadas[0][1]*anchoF, obj.coordenadas[0][0]*altoF, anchoF, altoF);
    ctx.fillRect(obj.coordenadas[1][1]*anchoF, obj.coordenadas[1][0]*altoF, anchoF, altoF);
    ctx.fillRect(obj.coordenadas[2][1]*anchoF, obj.coordenadas[2][0]*altoF, anchoF, altoF);
    ctx.fillRect(obj.coordenadas[3][1]*anchoF, obj.coordenadas[3][0]*altoF, anchoF, altoF);
+
+   ctx.strokeRect(obj.coordenadas[0][1]*anchoF, obj.coordenadas[0][0]*altoF, anchoF, altoF);
+   ctx.strokeRect(obj.coordenadas[1][1]*anchoF, obj.coordenadas[1][0]*altoF, anchoF, altoF);
+   ctx.strokeRect(obj.coordenadas[2][1]*anchoF, obj.coordenadas[2][0]*altoF, anchoF, altoF);
+   ctx.strokeRect(obj.coordenadas[3][1]*anchoF, obj.coordenadas[3][0]*altoF, anchoF, altoF);
 }
 
-// Pinta el tablero con un determinado color
+// Paint the board with a specific color
 function rellenarTablero(){
+   // This variable save the count to delete the complete lines
+   let con = 0;
    for(let i=0 ; i<tablero.length ; i++){
       for(let j=0 ; j<tablero[i].length ; j++){
          if(tablero[i][j]==0){
@@ -105,12 +114,21 @@ function rellenarTablero(){
          }else if(tablero[i][j]==1){
             ctx.fillStyle = "red";
             ctx.fillRect(j*anchoF, i*anchoF, altoF, anchoF);
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(j*anchoF, i*anchoF, altoF, anchoF);
+            con++;
          }
       }
+      if(tablero[i].length==con){
+         tablero.splice(i, 1);
+         tablero.unshift([0,0,0,0,0,0,0,0,0,0]);
+         //console.log(tablero.pop());
+      }
+      con=0;
    }
 }
 
-// Funcion principal
+// Main function
 function principal(){
    document.addEventListener('keydown', (tecla) =>{
       if(tecla.key == 'ArrowLeft'){
