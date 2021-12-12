@@ -9,6 +9,7 @@ class Pieza {
       this.nombre;
       this.color;
       this.con = 1;
+      this.numRotaciones;
    }
 
    desplazarAbajo(){
@@ -45,7 +46,7 @@ class Z extends Pieza {
       this.coordenadas[2][1] = 5;
       this.coordenadas[3][0] = 1;
       this.coordenadas[3][1] = 6;
-      this.nombre = "Z";
+      this.numRotaciones = 2;
       this.color = "red";
    }
 
@@ -79,7 +80,7 @@ class Zi extends Pieza {
       this.coordenadas[2][1] = 4;
       this.coordenadas[3][0] = 1;
       this.coordenadas[3][1] = 3;
-      this.nombre = "Zi";
+      this.numRotaciones = 2;
       this.color = "blue";
    }
 
@@ -113,7 +114,7 @@ class L extends Pieza {
       this.coordenadas[2][1] = 4;
       this.coordenadas[3][0] = 2;
       this.coordenadas[3][1] = 5;
-      this.nombre = "L";
+      this.numRotaciones = 4;
       this.color = "green";
    }
    rotar(){
@@ -160,7 +161,7 @@ class Li extends Pieza {
       this.coordenadas[2][1] = 4;
       this.coordenadas[3][0] = 2;
       this.coordenadas[3][1] = 3;
-      this.nombre = "Li";
+      this.numRotaciones = 4;
       this.color = "green";
    }
 
@@ -208,24 +209,23 @@ class C extends Pieza {
       this.coordenadas[2][1] = 4;
       this.coordenadas[3][0] = 1;
       this.coordenadas[3][1] = 5;
-      this.nombre = "C";
+      this.numRotaciones = 0;
       this.color = "yellow";
    }
-   rotar(){}
 }
 
 class T extends Pieza {
    constructor(){
       super();
       this.coordenadas[0][0] = 0;
-      this.coordenadas[0][1] = 4;
+      this.coordenadas[0][1] = 3;
       this.coordenadas[1][0] = 1;
       this.coordenadas[1][1] = 4;
       this.coordenadas[2][0] = 0;
-      this.coordenadas[2][1] = 3;
+      this.coordenadas[2][1] = 4;
       this.coordenadas[3][0] = 0;
       this.coordenadas[3][1] = 5;
-      this.nombre = "T";
+      this.numRotaciones = 4;
       this.color = "red";
    }
 
@@ -273,7 +273,7 @@ class P extends Pieza {
       this.coordenadas[2][1] = 4;
       this.coordenadas[3][0] = 3;
       this.coordenadas[3][1] = 4;
-      this.nombre = "P";
+      this.numRotaciones = 2;
       this.color = "orange";
    }
 
