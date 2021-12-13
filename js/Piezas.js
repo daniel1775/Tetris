@@ -6,7 +6,6 @@ class Pieza {
          [],
          []
       ];
-      this.nombre;
       this.color;
       this.con = 1;
       this.numRotaciones;

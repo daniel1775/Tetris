@@ -143,6 +143,9 @@ function principal(){
       }else if(tecla.key == "ArrowUp"){
          rellenarTablero();
          pieza.rotar();
+         /* if(pieza.coordenadas[0][0]==){
+            
+         } */
          pieza.con++;
          if(pieza.con>=pieza.numRotaciones){
             pieza.con=0;

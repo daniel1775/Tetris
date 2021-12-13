@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.textossubtitulo1 {
+  width: 168px;
+  height: 73px;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 31px;
+  color: #ffffff;
+}
+
+.textosubtitulo2 {
+  width: 104px;
+  height: 32px;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+body {
+  background-color: black;
+}
+
+.flexheader {
+  display: flex;
+  justify-content: space-between;
+  font-family: Source Sans Pro;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.flex-container1 {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-left: 30px;
+  margin-top: 50px;
+}
+
+.flex-container2 {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  margin-right: 40px;
+}
+
+.flexmain {
+  display: flex;
+  margin-left: 23px;
+  margin-right: 10px;
+  margin-top: 65px;
+  width: 346px;
+  height: 547px;
+  left: 22px;
+  top: 167px;
+  background: rgba(52, 52, 52, 0.5);
+}
+
+.flexcajafooter{
+    display: flex;
+    margin-top: 25px;
+    background: #1a1a1a;
+}
+
+.flexboton1{
+display: flex;
+position: relative;
+width: 56px;
+height: 56px;
+left: 21px;
+top: 763px;
+}
+
+.flexbotones2{
+
+}
+
+.flexboton3{
+    
+}
