@@ -4,38 +4,57 @@
   padding: 0;
 }
 
-html {
-  font-size: 62.5%;
-}
-
-.textossubtitulo1 {
-  width: 168px;
-  height: 73px;
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 25px;
-  line-height: 31px;
-  color: #ffffff;
-}
-
-.textosubtitulo2 {
-  width: 104px;
-  height: 32px;
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 30px;
-  text-align: center;
-
-  color: #ffffff;
-}
-
 body {
   background-color: black;
+  
 }
 
+#canva{
+  border: 1px solid white;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  font-family: Source Sans Pro;
+}
+
+.header__score{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+  margin-left: 5vw;
+}
+
+.header__score--title {
+  font-weight: normal;
+  font-size: 21px;
+  color: #ffffff;
+}
+
+.header__next{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh;
+  margin-right: 5vw;
+}
+
+.header__next--title{
+  font-weight: normal;
+  font-size: 21px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.header__next--box{
+  width: 65px;
+  height: 65px;
+  background-color: white;
+  border-radius: 15%;
+}
+
+/*
 .flexheader {
   display: flex;
   justify-content: space-between;
@@ -84,12 +103,4 @@ width: 56px;
 height: 56px;
 left: 21px;
 top: 763px;
-}
-
-.flexbotones2{
-
-}
-
-.flexboton3{
-    
-}
+} */
