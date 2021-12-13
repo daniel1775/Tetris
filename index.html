@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/style.css">
-   <title>Tetris</title>
-</head>
-<body>
-   
-   <script src="js/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tetris</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="flexheader">
+        <div class="flex-container1">
+          <h5>Puntaje:</h5>
+          <h5>Nivel:</h5>
+        </div>
+        <div class="flex-container2">
+          <h5>Siguiente:</h5>
+          <div class="cuadrito"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="flexmain">
+        <canvas id="canva" width="390" height="844"></canvas>
+      </div>
+    </main>
+    
+    <footer>
+      <div class="flexcajafooter">
+        <canvas id="canva" width="391" height="107"></canvas>
+      </div>
+      <form>
+        <div class="flexboton1">
+          <button><i class="far fa-eject"></i></button>
+        </div>
+        <div class="flexbotones2">
+          <button><i class="fas fa-arrow-alt-circle-left"></i></button>
+          <button><i class="fas fa-arrow-alt-circle-up"></i></button>
+          <button><i class="fas fa-arrow-alt-circle-right"></i></button>
+        </div>
+        <div class="flexboton3">
+          <button><i class="fas fa-redo"></i></button>
+        </div>
+      </form>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
