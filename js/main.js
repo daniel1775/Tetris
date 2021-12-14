@@ -1,13 +1,47 @@
 import { Pieza, Z, Zi, L, Li, C, T, P } from './Piezas.js';
 
-let canvas;
-let ctx;
-let anchoF = 20;
-let altoF = 20;
+let canvas = document.getElementById("canva");
+let ctx = canvas.getContext("2d");
+let anchoF = canvas.width/10;
+let altoF = canvas.width/10;
 let pieza = generarPieza(generarNumeroAleatorio());
+let pieza2;
+let piezaSiguiente = document.querySelector("#header__next--box");
+let ctxNext = piezaSiguiente.getContext("2d");
+// Numero de fichas que han salido
+let veces = 0;
 
-canvas = document.getElementById("canva");
-ctx = canvas.getContext("2d");
+function generarMini(obj){
+   ctxNext.fillStyle = obj.color;
+   ctxNext.strokeStyle = "black";
+
+   let num = 15;
+   let num2 = 15;
+   ctxNext.fillRect(obj.coordenadas[0][1]*num, obj.coordenadas[0][0]*num, num, num);
+   ctxNext.fillRect(obj.coordenadas[1][1]*num, obj.coordenadas[1][0]*num, num, num);
+   ctxNext.fillRect(obj.coordenadas[2][1]*num, obj.coordenadas[2][0]*num, num, num);
+   ctxNext.fillRect(obj.coordenadas[3][1]*num, obj.coordenadas[3][0]*num, num, num);
+
+   ctxNext.strokeRect(obj.coordenadas[0][1]*num, obj.coordenadas[0][0]*num, num, num);
+   ctxNext.strokeRect(obj.coordenadas[1][1]*num, obj.coordenadas[1][0]*num, num, num);
+   ctxNext.strokeRect(obj.coordenadas[2][1]*num, obj.coordenadas[2][0]*num, num, num);
+   ctxNext.strokeRect(obj.coordenadas[3][1]*num, obj.coordenadas[3][0]*num, num, num);
+}
+
+function limpiarMini(obj){
+   ctxNext.fillStyle = "white";
+   ctxNext.strokeStyle = "black";
+
+   ctxNext.fillRect(obj.coordenadas[0][1]*anchoF, obj.coordenadas[0][0]*altoF, anchoF, altoF);
+   ctxNext.fillRect(obj.coordenadas[1][1]*anchoF, obj.coordenadas[1][0]*altoF, anchoF, altoF);
+   ctxNext.fillRect(obj.coordenadas[2][1]*anchoF, obj.coordenadas[2][0]*altoF, anchoF, altoF);
+   ctxNext.fillRect(obj.coordenadas[3][1]*anchoF, obj.coordenadas[3][0]*altoF, anchoF, altoF);
+
+   ctxNext.strokeRect(obj.coordenadas[0][1]*anchoF, obj.coordenadas[0][0]*altoF, anchoF, altoF);
+   ctxNext.strokeRect(obj.coordenadas[1][1]*anchoF, obj.coordenadas[1][0]*altoF, anchoF, altoF);
+   ctxNext.strokeRect(obj.coordenadas[2][1]*anchoF, obj.coordenadas[2][0]*altoF, anchoF, altoF);
+   ctxNext.strokeRect(obj.coordenadas[3][1]*anchoF, obj.coordenadas[3][0]*altoF, anchoF, altoF);
+}
 
 let tablero = [
    [0,0,0,0,0,0,0,0,0,0],
@@ -45,12 +79,11 @@ function generarPieza(random){
       aux = new Li();
    }else if(random==4){
       aux = new C();
-   }else if(random==5){ 
+   }else if(random==5){
       aux = new T();
    }else if(random==6){
       aux = new P();
    }
-
    return aux;
 }
 
@@ -64,7 +97,8 @@ function fijarPieza(ficha){
    for(let i=0 ; i<ficha.coordenadas.length ; i++){
       tablero[ficha.coordenadas[i][0]][ficha.coordenadas[i][1]] = 1;
    }
-   pieza = generarPieza(generarNumeroAleatorio());
+   pieza = generarPieza(num);
+   
 }
 
 // Draw a piece in the initial state
@@ -75,7 +109,7 @@ function dibujarFicha(obj , tipo){
          (tablero[obj.coordenadas[3][0]+1][obj.coordenadas[3][1]]!=1 && tablero[obj.coordenadas[2][0]+1][obj.coordenadas[2][1]]!=1 && tablero[obj.coordenadas[1][0]+1][obj.coordenadas[1][1]]!=1 && tablero[obj.coordenadas[0][0]+1][obj.coordenadas[0][1]]!=1)){
          obj.desplazarAbajo();
       }else{
-         fijarPieza(pieza);
+         fijarPieza(obj);
       }
    }else if(tipo=="izquierda"){
       if((obj.coordenadas[0][1]!=0 && obj.coordenadas[1][1]!=0 && obj.coordenadas[2][1]!=0 && obj.coordenadas[3][1]!=0) &&
@@ -109,7 +143,7 @@ function rellenarTablero(){
    for(let i=0 ; i<tablero.length ; i++){
       for(let j=0 ; j<tablero[i].length ; j++){
          if(tablero[i][j]==0){
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "#272727";
             ctx.fillRect(j*anchoF, i*anchoF, altoF, anchoF);
          }else if(tablero[i][j]==1){
             ctx.fillStyle = "red";

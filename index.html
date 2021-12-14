@@ -1,58 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap"
-      rel="stylesheet"
-    />
-    <title>Tetris</title>
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-  </head>
 
-  <body>
-    <header>
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="css/style.css" />
+   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet" />
+   <title>Tetris</title>
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+   <!-- instrucion message movil -->
+   <div class="message">
+      <div class="message__tittle">
+         <h1>Bienvenido</h1>
+      </div>
+      <div class="message__subt">
+         <h3>Controles:</h3>
+      </div>
+      <div class="message__play">
+         <div class="imgplay">
+            <img src="img/boton de play.png" class="imgplay" />
+         </div>
+         <p class=playandpause>
+            Play/pause
+         </p>
+      </div>
+      <div class="message__info">
+         <div class="imgpause"><img src="img/LetraP.png" class="imgpause"/></div>
+         <p class=pause>Play/pause</p>
+         <div class="imgflecha"><img src="img/flecha.png" class="flechaarriba"/></div>
+         <p class=flechaarriba>Rotar</p>
+         <div class="imgflechas"><img src="img/flechas (2).png" class="flechas"/></div>
+         <p class=flechas>Flechas de dirección</p>
+      </div>
+      <p class="texto">
+         Si estás en el móvil puedes girar y rotar <br> las piezas de forma táctil.
+      </p>
+   </div>
+
+   <header>
       <div class="header">
-        <div class="header__score">
-          <h5 class="header__score--title header__score--titleScore">Puntaje: </h5>
-          <h5 class="header__score--title header__score--titleLevel">Nivel: </h5>
-        </div>
-        <div class="header__next">
-          <h5 class="header__next--title">Siguiente</h5>
-          <div class="header__next--box"></div>
-        </div>
+         <div class="header__score">
+            <h5 class="header__score--title header__score--titleScore">PUNTAJE: </h5>
+            <h5 class="header__score--title header__score--titleLevel">NIVEL: </h5>
+         </div>
+         <div class="header__next">
+            <h5 class="header__next--title">SIGUIENTE:</h5>
+            <canvas id="header__next--box" width="100" height="100"></canvas>
+         </div>
       </div>
-    </header>
+   </header>
 
-    <main>
-      <div class="board">
-        <canvas id="canva" width="200" height="400"></canvas>
-      </div>
-    </main>
-    
-    <footer>
-      <form>
-        <div class="flexboton1">
-          <button><i class="far fa-eject"></i></button>
-        </div>
-        <div class="flexboton3">
-          <button><i class="fas fa-redo"></i></button>
-        </div>
-      </form>
-    </footer>
+   <main>
+      <canvas id="canva" width="200" height="400"></canvas>
+   </main>
+   <footer>
+      <button class="footer__button footer__button--pause"><img src="img/icon-pause.png" alt=""></button>
+      <button class="footer__button footer__button--restart"><img src="img/icon-reset.png" alt=""></button>
+   </footer>
 
-    <!-- <script src="js/main.js"></script> -->
-  </body>
+
+
+   <script src="js/main.js" type="module"></script>
+</body>
+
 </html>

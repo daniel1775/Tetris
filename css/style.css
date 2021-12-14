@@ -1,106 +1,213 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
 }
+
+/* -- Movil message ----------------------------*/
+.message{
+  display: none;
+}
+
+.message__tittle{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 38px;
+  text-align: center;
+  
+  color: #000000;
+}
+
+  .message__subt{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #000000;
+  }
+
+  .imgplay{
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+      
+  }
+
+.playandpause{
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+}
+
+.texto{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: Merriweather;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  
+  color: #08003D;
+}
+/* -------------------------------------- */
 
 body {
-  background-color: black;
-  
+   background-color: black;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 100vh;
 }
 
-#canva{
-  border: 1px solid white;
+.header {
+   display: flex;
+   position: relative;
+   justify-content: space-between;
+   align-items: flex-end;
+   font-family: Source Sans Pro;
 }
 
-.header{
-  display: flex;
-  justify-content: space-between;
-  font-family: Source Sans Pro;
-}
-
-.header__score{
-  display: flex;
-  flex-direction: column;
-  margin-top: 5vh;
-  margin-left: 5vw;
+.header__score {
+   display: flex;
+   flex-direction: column;
+   margin-left: 10vw;
+   margin-top: 5vh;
 }
 
 .header__score--title {
-  font-weight: normal;
-  font-size: 21px;
-  color: #ffffff;
+   font-weight: normal;
+   font-size: 21px;
+   margin-bottom: 10px;
+   color: #ffffff;
 }
 
-.header__next{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5vh;
-  margin-right: 5vw;
+.header__next {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   position: absolute;
+   left: 69vw;
+   top: 6vh;
 }
 
-.header__next--title{
-  font-weight: normal;
-  font-size: 21px;
-  margin-bottom: 10px;
-  color: #ffffff;
+.header__next--title {
+   font-weight: normal;
+   font-size: 19px;
+   margin-bottom: 10px;
+   font-family: Source Sans Pro;
+   color: #ffffff;
 }
 
-.header__next--box{
-  width: 65px;
-  height: 65px;
-  background-color: white;
-  border-radius: 15%;
+#header__next--box {
+   background-color: white;
+   border-radius: 15%;
 }
 
-/*
-.flexheader {
-  display: flex;
-  justify-content: space-between;
-  font-family: Source Sans Pro;
-  font-size: 25px;
-  color: #ffffff;
+main {
+   display: flex;
+   justify-content: center;
 }
 
-.flex-container1 {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  margin-left: 30px;
-  margin-top: 50px;
+#canva {
+   width: 85vw;
+   height: 66vh;
+   display: block;
+   background-color: #272727;
 }
 
-.flex-container2 {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-end;
-  margin-right: 40px;
+footer {
+   background-color: #272727;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   padding-top: 10px;
+   padding-bottom: 10px;
 }
 
-.flexmain {
-  display: flex;
-  margin-left: 23px;
-  margin-right: 10px;
-  margin-top: 65px;
-  width: 346px;
-  height: 547px;
-  left: 22px;
-  top: 167px;
-  background: rgba(52, 52, 52, 0.5);
+.footer__button {
+   background-color: #272727;
+   color: white;
+   border: none;
+   width: 70px;
+   height: 70px;
 }
 
-.flexcajafooter{
-    display: flex;
-    margin-top: 25px;
-    background: #1a1a1a;
+.footer__button img {
+   width: 60px;
+   height: 60px;
 }
 
-.flexboton1{
-display: flex;
-position: relative;
-width: 56px;
-height: 56px;
-left: 21px;
-top: 763px;
-} */
+@media (min-width: 1000px) {
+  .message__info{
+    display: block;
+  }
+  .message__play{
+    display: none;
+  }
+
+   .header {
+      background-color: #272727;
+      height: 15vh;
+   }
+
+   .header__score {
+      flex-direction: row;
+      justify-content: space-between;
+      align-self: flex-start;
+      width: 50vw;
+      margin-bottom: 37px;
+   }
+
+   .header__score--titleLevel{
+     margin-right: 10vw;
+   }
+
+   .header__score--title {
+      font-weight: bold;
+      font-size: 28px;
+      color: #ffffff;
+   }
+
+   .header__next{
+     top: 5vh;
+     left: 78vw;
+   }
+
+   .header__next--box{
+     width: 120px;
+     height: 120px;
+   }
+
+   .header__next--title{
+    font-weight: bold;
+    font-size: 28px;
+    color: #ffffff;
+   }
+   
+   #canva {
+      width: 400px;
+   }
+
+   footer {
+      background-color: black;
+   }
+
+   .footer__button {
+      background-color: black;
+   }
+}
