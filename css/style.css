@@ -68,6 +68,7 @@ body {
    position: absolute;
    left: 62vw;
    top: 1vh;
+   z-index: 7;
 }
 
 .header__next--title {
@@ -86,6 +87,13 @@ body {
 main {
    display: flex;
    justify-content: center;
+   position: relative;
+}
+
+#game-over{
+   display: none;
+   position: absolute;
+   top: 25vh;
 }
 
 #canva {

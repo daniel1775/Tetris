@@ -11,6 +11,7 @@ let btnIzquierda = document.getElementById("footer__button--left");
 let btnArriba = document.getElementById("footer__button--up");
 let btnDerecha = document.getElementById("footer__button--right");
 let btnAbajo = document.getElementById("footer__button--down");
+let gameOver = document.getElementById("game-over");
 
 // width and heigh of the piece
 let anchoF = canvas.width/10;
@@ -95,6 +96,8 @@ function generarPieza(random){
    return aux;
 }
 
+let intervalo;
+
 // Generate a random number between 0 and 6
 function generarNumeroAleatorio(){
    return Math.floor(Math.random()*(7));
@@ -152,6 +155,20 @@ function rellenarTablero(){
    let con = 0;
    for(let i=0 ; i<tablero.length ; i++){
       for(let j=0 ; j<tablero[i].length ; j++){
+         if(i==0){
+            if(tablero[i][j]==1){
+               //gameOver.style.display = "block";
+               pieza = generarPieza(generarNumeroAleatorio());
+               puntaje.innerText = 0;
+               nivel.innerText = 0;
+               for(let i=0 ; i<tablero.length ; i++){
+                  for(let j=0 ; j<tablero[i].length ; j++){
+                     tablero[i][j] = 0;
+                  }
+               }
+               alert("Has perdido, presiona aceptar para iniciar un nuevo juego");
+            }
+         }
          if(tablero[i][j]==0){
             ctx.fillStyle = "#272727";
             ctx.fillRect(j*anchoF, i*anchoF, altoF, anchoF);
@@ -217,9 +234,6 @@ function principal(){
       }else if(tecla.key == "ArrowUp"){
          rellenarTablero();
          pieza.rotar();
-         /* if(pieza.coordenadas[0][0]==){
-            
-         } */
          pieza.con++;
          if(pieza.con>=pieza.numRotaciones){
             pieza.con=0;
@@ -229,7 +243,7 @@ function principal(){
    });
 
    btnPause.addEventListener('click', () => {
-      alert("EntParo");
+      alert("Presiona aceptar para continuar con el juego");
    });
    btnReinicio.addEventListener('click', () => {
       pieza = generarPieza(generarNumeroAleatorio());
@@ -242,7 +256,7 @@ function principal(){
       }
    });
 
-   let intervalo = setInterval(() => {
+   intervalo = setInterval(() => {
       rellenarTablero();
       dibujarFicha(pieza, "abajo");
    }, 1000);

@@ -114,7 +114,7 @@ class L extends Pieza {
       this.coordenadas[3][0] = 2;
       this.coordenadas[3][1] = 5;
       this.numRotaciones = 4;
-      this.color = "green";
+      this.color = "salmon";
    }
    rotar(){
       if(this.con==0){
@@ -225,7 +225,7 @@ class T extends Pieza {
       this.coordenadas[3][0] = 0;
       this.coordenadas[3][1] = 5;
       this.numRotaciones = 4;
-      this.color = "red";
+      this.color = "purple";
    }
 
    rotar(){
