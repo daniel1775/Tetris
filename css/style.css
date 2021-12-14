@@ -1,202 +1,213 @@
 * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.message__container{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   position: absolute;
-   z-index: 6;
-   width: 100vw;
-   height: 100vh;
-   background-color: rgba(238, 238, 238, 0.623);
+.message__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 6;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(238, 238, 238, 0.623);
 }
 
-.message{
-   display: flex;
-   flex-direction: column;
-   border-radius: 4%;
-   text-align: center;
-   opacity: 1;
-   background-color: white;
-   padding: 3%;
+.message {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4%;
+  text-align: center;
+  opacity: 1;
+  background-color: white;
+  padding: 3%;
 }
 
 body {
-   background-color: black;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   position: relative;
-   height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  height: 100vh;
 }
 
 .header {
-   display: flex;
-   position: relative;
-   justify-content: space-between;
-   align-items: flex-end;
-   font-family: Source Sans Pro;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: Source Sans Pro;
 }
 
 .header__score {
-   display: flex;
-   flex-direction: column;
-   margin-left: 10vw;
-   margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vw;
+  margin-top: 5vh;
 }
 
 .header__score--title {
-   display: flex;
-   font-weight: normal;
-   font-size: 21px;
-   margin-bottom: 10px;
-   color: #ffffff;
+  display: flex;
+  font-weight: normal;
+  font-size: 21px;
+  margin-bottom: 10px;
+  color: #ffffff;
 }
 
-.header__score--title p{
-   margin-left: 15px;
+.header__score--title p {
+  margin-left: 15px;
 }
 
 .header__next {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   position: absolute;
-   left: 62vw;
-   top: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 62vw;
+  top: 1vh;
 }
 
 .header__next--title {
-   font-weight: normal;
-   font-size: 19px;
-   margin-bottom: 10px;
-   font-family: Source Sans Pro;
-   color: #ffffff;
+  font-weight: normal;
+  font-size: 19px;
+  margin-bottom: 10px;
+  font-family: Source Sans Pro;
+  color: #ffffff;
 }
 
 #header__next--box {
-   background-color: white;
-   border-radius: 15%;
+  background-color: white;
+  border-radius: 15%;
 }
 
 main {
-   display: flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #canva {
-   width: 85vw;
-   height: 66vh;
-   display: block;
-   background-color: #272727;
+  width: 85vw;
+  height: 66vh;
+  display: block;
+  background-color: #272727;
 }
 
 footer {
-   background-color: #272727;
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   padding-top: 10px;
-   padding-bottom: 10px;
+  background-color: #272727;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-footer i{
-   background-color: #272727;
-   color: white;
-   font-size: 40px;
-   border: 1px solid white;
+footer i {
+  background-color: #272727;
+  color: white;
+  font-size: 40px;
+  border: 1px solid white;
 }
 
 .footer__button {
-   background-color: #272727;
-   color: white;
-   border: none;
-   width: 70px;
-   height: 70px;
+  background-color: #272727;
+  color: white;
+  border: none;
+  width: 70px;
+  height: 70px;
 }
 
-#footer__button--up{
-   margin-left: 5px;
+#footer__button--up {
+  margin-left: 5px;
 }
 
-#footer__button--down{
-   margin-right: 5px;
+#footer__button--down {
+  margin-right: 5px;
 }
 
 .footer__button img {
-   width: 60px;
-   height: 60px;
+  width: 60px;
+  height: 60px;
 }
 
-.message__desktop{
-   display: none;
+.message__desktop {
+  display: none;
 }
 
 @media (min-width: 1000px) {
-   .footer__movil{
-      display: none;
-   }
+  .footer__movil {
+    display: none;
+  }
 
-   .message__movil{
-      display: none;
-   }
+  .message__movil {
+    display: none;
+  }
 
-   .message__desktop{
-      display: block;
-   }
+  .message__desktop {
+    display: block;
+  }
 
-   .header {
-      background-color: #272727;
-      height: 15vh;
-   }
+  .header {
+    background-color: #272727;
+    height: 15vh;
+  }
 
-   .header__score {
-      flex-direction: row;
-      justify-content: space-between;
-      align-self: flex-start;
-      width: 50vw;
-      margin-bottom: 37px;
-   }
+  .header__score {
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 50vw;
+    margin-bottom: 37px;
+  }
 
-   .header__score--titleLevel{
-     margin-right: 10vw;
-   }
+  .header__score--titleLevel {
+    margin-right: 10vw;
+  }
 
-   .header__score--title {
-      font-weight: bold;
-      font-size: 28px;
-      color: #ffffff;
-   }
-
-   .header__next{
-     top: 5vh;
-     left: 78vw;
-   }
-
-   .header__next--box{
-     width: 120px;
-     height: 120px;
-   }
-
-   .header__next--title{
+  .header__score--title {
     font-weight: bold;
     font-size: 28px;
     color: #ffffff;
-   }
-   
-   #canva {
-      width: 400px;
-   }
+  }
 
-   footer {
-      background-color: black;
-   }
+  .header__next {
+    top: 5vh;
+    left: 78vw;
+  }
 
-   .footer__button {
-      background-color: black;
-   }
+  .header__next--box {
+    width: 120px;
+    height: 120px;
+  }
+
+  .header__next--title {
+    font-weight: bold;
+    font-size: 28px;
+    color: #ffffff;
+  }
+
+  #canva {
+    width: 400px;
+  }
+
+  footer {
+    background-color: black;
+  }
+
+  .footer__button {
+    background-color: black;
+  }
+}
+
+.message__desktop{
+  
+   margin-top: 30px;
+   font-family: Merriweather;
+   font-style: italic;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 30px;
+   color: #08003d;
 }
