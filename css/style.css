@@ -68,6 +68,7 @@ body {
   position: absolute;
   left: 62vw;
   top: 1vh;
+  z-index: 7;
 }
 
 .header__next--title {
