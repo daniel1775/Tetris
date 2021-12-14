@@ -4,12 +4,29 @@
    padding: 0;
 }
 
-/* -- Movil message ----------------------------*/
-.message{
-  display: none;
+.message__container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   z-index: 6;
+   width: 100vw;
+   height: 100vh;
+   background-color: rgba(238, 238, 238, 0.623);
 }
 
-.message__tittle{
+.message{
+   display: flex;
+   flex-direction: column;
+   border-radius: 4%;
+   text-align: center;
+   opacity: 1;
+   background-color: white;
+   padding: 3%;
+}
+
+/* -- Movil message ----------------------------*/
+/* .message__tittle{
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -61,9 +78,8 @@
   font-size: 14px;
   line-height: 18px;
   text-align: center;
-  
   color: #08003D;
-}
+} */
 /* -------------------------------------- */
 
 body {
@@ -71,6 +87,7 @@ body {
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   position: relative;
    height: 100vh;
 }
 
@@ -90,10 +107,15 @@ body {
 }
 
 .header__score--title {
+   display: flex;
    font-weight: normal;
    font-size: 21px;
    margin-bottom: 10px;
    color: #ffffff;
+}
+
+.header__score--title p{
+   margin-left: 15px;
 }
 
 .header__next {
@@ -101,8 +123,8 @@ body {
    flex-direction: column;
    align-items: center;
    position: absolute;
-   left: 69vw;
-   top: 6vh;
+   left: 62vw;
+   top: 1vh;
 }
 
 .header__next--title {
@@ -139,6 +161,13 @@ footer {
    padding-bottom: 10px;
 }
 
+footer i{
+   background-color: #272727;
+   color: white;
+   font-size: 40px;
+   border: 1px solid white;
+}
+
 .footer__button {
    background-color: #272727;
    color: white;
@@ -147,18 +176,35 @@ footer {
    height: 70px;
 }
 
+#footer__button--up{
+   margin-left: 5px;
+}
+
+#footer__button--down{
+   margin-right: 5px;
+}
+
 .footer__button img {
    width: 60px;
    height: 60px;
 }
 
+.message__desktop{
+   display: none;
+}
+
 @media (min-width: 1000px) {
-  .message__info{
-    display: block;
-  }
-  .message__play{
-    display: none;
-  }
+   .footer__movil{
+      display: none;
+   }
+
+   .message__movil{
+      display: none;
+   }
+
+   .message__desktop{
+      display: block;
+   }
 
    .header {
       background-color: #272727;

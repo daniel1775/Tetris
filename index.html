@@ -14,39 +14,35 @@
 
 <body>
    <!-- instrucion message movil -->
-   <div class="message">
-      <div class="message__tittle">
-         <h1>Bienvenido</h1>
-      </div>
-      <div class="message__subt">
-         <h3>Controles:</h3>
-      </div>
-      <div class="message__play">
-         <div class="imgplay">
-            <img src="img/boton de play.png" class="imgplay" />
+   <div class="message__container">
+      <div class="message">
+         <h1 class="message__title message__title--bienvenido">Bienvenido</h1>
+         <h3 class="message__title message__title--controles">Controles:</h3>
+         <div class="message__movil">
+            <div class="message__img message__img--imgPlay"><img src="img/icon-pause.png" class="imgPause" /></div>
+            <p class="message__text message__text--0">Play/pause</p>
          </div>
-         <p class=playandpause>
-            Play/pause
+         <div class="message__desktop">
+            <div class="message__image message__image--pause"><img src="img/icon-pause.png" class="imgPause" /></div>
+            <p class="message__text message__text--1">Play/pause</p>
+            <div class="message__imgflecha"><img src="img/icon-up.png" class="imgUp" /></div>
+            <p class="message__text message__text--2">Rotar</p>
+            <div class="message__image message__image--arrows"><img src="img/icon-arrows.png" class="imgArrows" /></div>
+            <p class="message__text message__text--3">Flechas de dirección</p>
+         </div>
+         <p class="message__text message__text--4">
+            Si estás en el móvil puedes girar y rotar <br> las piezas de forma táctil.
          </p>
       </div>
-      <div class="message__info">
-         <div class="imgpause"><img src="img/LetraP.png" class="imgpause"/></div>
-         <p class=pause>Play/pause</p>
-         <div class="imgflecha"><img src="img/flecha.png" class="flechaarriba"/></div>
-         <p class=flechaarriba>Rotar</p>
-         <div class="imgflechas"><img src="img/flechas (2).png" class="flechas"/></div>
-         <p class=flechas>Flechas de dirección</p>
-      </div>
-      <p class="texto">
-         Si estás en el móvil puedes girar y rotar <br> las piezas de forma táctil.
-      </p>
    </div>
 
    <header>
       <div class="header">
          <div class="header__score">
-            <h5 class="header__score--title header__score--titleScore">PUNTAJE: </h5>
-            <h5 class="header__score--title header__score--titleLevel">NIVEL: </h5>
+            <h5 class="header__score--title header__score--titleScore">PUNTAJE :<p>0</p>
+            </h5>
+            <h5 class="header__score--title header__score--titleLevel">NIVEL :<p>0</p>
+            </h5>
          </div>
          <div class="header__next">
             <h5 class="header__next--title">SIGUIENTE:</h5>
@@ -58,8 +54,15 @@
    <main>
       <canvas id="canva" width="200" height="400"></canvas>
    </main>
+
    <footer>
       <button class="footer__button footer__button--pause"><img src="img/icon-pause.png" alt=""></button>
+      <div class="footer__movil">
+         <button id="footer__button--left"><i class="fas fa-arrow-left"></i></button>
+         <button id="footer__button--up"><i class="fas fa-arrow-up"></i></button>
+         <button id="footer__button--down"><i class="fas fa-arrow-down"></i></button>
+         <button id="footer__button--right"><i class="fas fa-arrow-right"></i></button>
+      </div>
       <button class="footer__button footer__button--restart"><img src="img/icon-reset.png" alt=""></button>
    </footer>
 
