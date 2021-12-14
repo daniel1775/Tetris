@@ -1,6 +1,7 @@
-import { Pieza, Z, Zi, L, Li, C, T, P } from './Piezas.js';
+import { Z, Zi, L, Li, C, T, P } from './Piezas.js';
 
 let canvas = document.getElementById("canva");
+let ctx = canvas.getContext("2d");
 let puntaje = document.querySelector(".header__score--titleScore p");
 let nivel = document.querySelector(".header__score--titleLevel p");
 let btnPause = document.querySelector(".footer__button--pause");
@@ -11,36 +12,18 @@ let btnArriba = document.getElementById("footer__button--up");
 let btnDerecha = document.getElementById("footer__button--right");
 let btnAbajo = document.getElementById("footer__button--down");
 
-let ctx = canvas.getContext("2d");
+// width and heigh of the piece
 let anchoF = canvas.width/10;
 let altoF = canvas.width/10;
+// store the current piece
 let pieza = generarPieza(generarNumeroAleatorio());
+// store the next piece
 let pieza2 = generarPieza(generarNumeroAleatorio());;
+// canvas of the next piece
 let piezaSiguiente = document.querySelector("#header__next--box");
 let ctxNext = piezaSiguiente.getContext("2d");
+// value of the interval
 let tiempo = 500;
-
-function generarMini(obj){
-   ctxNext.fillStyle = obj.color;
-   ctxNext.strokeStyle = "black";
-
-   let num = 10;
-   let num2 = 15;
-   ctxNext.fillRect(obj.coordenadas[0][1]*num, obj.coordenadas[0][0]*num, num, num);
-   ctxNext.fillRect(obj.coordenadas[1][1]*num, obj.coordenadas[1][0]*num, num, num);
-   ctxNext.fillRect(obj.coordenadas[2][1]*num, obj.coordenadas[2][0]*num, num, num);
-   ctxNext.fillRect(obj.coordenadas[3][1]*num, obj.coordenadas[3][0]*num, num, num);
-
-   ctxNext.strokeRect(obj.coordenadas[0][1]*num, obj.coordenadas[0][0]*num, num, num);
-   ctxNext.strokeRect(obj.coordenadas[1][1]*num, obj.coordenadas[1][0]*num, num, num);
-   ctxNext.strokeRect(obj.coordenadas[2][1]*num, obj.coordenadas[2][0]*num, num, num);
-   ctxNext.strokeRect(obj.coordenadas[3][1]*num, obj.coordenadas[3][0]*num, num, num);
-}
-
-function limpiarMini(){
-   ctxNext.fillStyle = "white";
-   ctxNext.fillRect(0, 0, piezaSiguiente.width, piezaSiguiente.height);
-}
 
 let tablero = [
    [0,0,0,0,0,0,0,0,0,0],
@@ -64,6 +47,32 @@ let tablero = [
    [0,0,0,0,0,0,0,0,0,0],
    [0,0,0,0,0,0,0,0,0,0],
 ];
+
+// Draw a piece in the next piece canvas
+function generarMini(obj){
+   ctxNext.fillStyle = obj.color;
+   ctxNext.strokeStyle = "black";
+
+   let num = 20;
+   let num2 = 15;
+   let num3 = -35;
+   let num4 = num;
+   ctxNext.fillRect((obj.coordenadas[0][1]*num)+num3, (obj.coordenadas[0][0]*num)+num2, num4, num4);
+   ctxNext.fillRect((obj.coordenadas[1][1]*num)+num3, (obj.coordenadas[1][0]*num)+num2, num4, num4);
+   ctxNext.fillRect((obj.coordenadas[2][1]*num)+num3, (obj.coordenadas[2][0]*num)+num2, num4, num4);
+   ctxNext.fillRect((obj.coordenadas[3][1]*num)+num3, (obj.coordenadas[3][0]*num)+num2, num4, num4);
+
+   ctxNext.strokeRect((obj.coordenadas[0][1]*num)+num3, (obj.coordenadas[0][0]*num)+num2, num4, num4);
+   ctxNext.strokeRect((obj.coordenadas[1][1]*num)+num3, (obj.coordenadas[1][0]*num)+num2, num4, num4);
+   ctxNext.strokeRect((obj.coordenadas[2][1]*num)+num3, (obj.coordenadas[2][0]*num)+num2, num4, num4);
+   ctxNext.strokeRect((obj.coordenadas[3][1]*num)+num3, (obj.coordenadas[3][0]*num)+num2, num4, num4);
+}
+
+// Clean canvas of the next piece
+function limpiarMini(){
+   ctxNext.fillStyle = "white";
+   ctxNext.fillRect(0, 0, piezaSiguiente.width, piezaSiguiente.height);
+}
 
 // Generate a random piece
 function generarPieza(random){
@@ -158,7 +167,7 @@ function rellenarTablero(){
          tablero.splice(i, 1);
          tablero.unshift([0,0,0,0,0,0,0,0,0,0]);
          puntaje.innerText = parseInt(puntaje.innerText)+100;
-         if(parseInt(puntaje.innerText) % 100 == 0){
+         if(parseInt(puntaje.innerText) % 1000 == 0){
             nivel.innerText = parseInt(nivel.innerText)+1;
             tiempo=100;
          }

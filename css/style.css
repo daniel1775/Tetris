@@ -25,63 +25,6 @@
    padding: 3%;
 }
 
-/* -- Movil message ----------------------------*/
-/* .message__tittle{
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  font-family: Merriweather;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 38px;
-  text-align: center;
-  
-  color: #000000;
-}
-
-  .message__subt{
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
-    font-family: Merriweather;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 25px;
-    text-align: center;
-    color: #000000;
-  }
-
-  .imgplay{
-      display: flex;
-      justify-content: center;
-      margin-top: 8px;
-      
-  }
-
-.playandpause{
-  font-family: Merriweather;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  text-align: center;
-}
-
-.texto{
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  font-family: Merriweather;
-  font-style: italic;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
-  color: #08003D;
-} */
-/* -------------------------------------- */
-
 body {
    background-color: black;
    display: flex;
